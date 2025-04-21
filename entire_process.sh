@@ -1,4 +1,5 @@
 # processing
+curl https://raw.githubusercontent.com/yinghaoz1/tmdb-movie-dataset-analysis/master/tmdb-movies.csv -o movie_dataset.csv
 mkdir backup
 cp movie_dataset.csv backup_dataset.csv
 mv backup_dataset.csv backup
