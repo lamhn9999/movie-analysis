@@ -1,9 +1,11 @@
 # processing
 curl https://raw.githubusercontent.com/yinghaoz1/tmdb-movie-dataset-analysis/master/tmdb-movies.csv -o movie_dataset.csv
-mkdir backup
+mkdir -p backup
 cp movie_dataset.csv backup_dataset.csv
 mv backup_dataset.csv backup
-export LC_NUMERIC=en_US.UTF-8 #IMPORTANT
+if [[ $LC_NUMERIC != "" ]]; then
+    export LC_NUMERIC=en_US.UTF-8 #IMPORTANT
+fi
 cat movie_dataset.csv | head -n 1 > header.csv
 awk 'BEGIN { ORS=""; inside=0 }
 {
